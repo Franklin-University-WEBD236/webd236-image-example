@@ -2,42 +2,54 @@
   include('parts/header.php');
   include_once('parts/utils.php');
   include_once('parts/db.php');
+  
+  function removeDuplicates($arr) {
+      asort($arr);
+      $prev_el = NULL;
+      $prev_key = NULL;
+      $flag = FALSE;
+      foreach($arr as $key=>$el) {
+        if($flag) {
+          if($prev_el == $el) {
+            unset($arr[$key]);
+            unset($arr[$prev_key]);
+          }
+        }
+        $prev_el = $el;
+        $prev_key = $key;
+        $flag = TRUE;
+      }
+      return $arr;
+    }
 
-  $description = safeParam("description", "");
-
-  if ($description) {
-    addToDo($description);
+  function testArr() {
+    $arr = array();
+    $arr[4] = 'four';
+    $arr['three'] = 3;
+    $arr[] = 'What\'s my index?';
+    return $arr;
   }
 
-  $rows = findCurrentToDos();
+  echo '2. ' . print_r(testArr()) . '<br><br>';
+
+  $arr = array(
+                   'a' => "one",
+                   'b' => "two",
+                   'c' => "three",
+                   'd' => "two",
+                   'e' => "four",
+                   'f' => "five",
+                   'g' => "three",
+                   'h' => "two"
+                );
+                
+                echo '4. Original array:<br>';
+                print_r($arr);
+                echo '<br><br>Duplicates removed:<br>';
+                print_r(removeDuplicates($arr));
+
 ?>
+
+
   
-      <div class="row">
-        <div class="col-lg-8 offset-2">
-          <h2>Add a new thing to do</h2>
-          <form action="index.php" method="post">
-            <div class="form-group">
-              <label for="description">Description</label>
-              <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter description" value=""/>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8 offset-2">
-<?php if ($rows): ?>
-          <h2>Current things to do</h2>
-          <ol>
-<?php foreach ($rows as $row): ?>
-            <li><?php echo "{$row['description']}"; ?></li>
-<?php endforeach; ?>
-          </ol>
-<?php else: ?>
-          <p>Nothing found to do</p>
-<?php endif; ?>
-        </div>
-      </div>
 <?php include('parts/footer.php'); ?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>To do list model 1</title>
+    <title>Test Project</title>
     <link href="style.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,9 +16,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-2">
-          <h1 class="display-4">To do list model 1</h1>
-          <p class="lead">Keep track of things that you need to do.</p>
-          <p><em>Author: <a href="https://www.franklin.edu/about-us/faculty-staff/faculty-profiles/whittakt">Todd Whittaker</a></em></p>
+          <h3 class="display-4">Test Proj</h3>
+          <p class="lead">Testing Functions and Homework.</p>
+          <p><em>Author: <a href="https://kulisek.org">Jan Kulisek</a></em></p>
           <hr>
         </div>
       </div>
