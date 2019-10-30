@@ -32,9 +32,9 @@
 
   function removeAllValuesMatching($arr, $elem) {
     
-    foreach($arr as $el) {
+    foreach($arr as $key => $el) {
       if($el == $elem) {
-        unset($arr, $el);
+        unset($arr[$key]);
       }
     }
     return $arr;
@@ -42,7 +42,8 @@
   
   echo '2. ' ;
   
-  echo print_r(testArr()) . '<br><br>';
+  echo print_r(testArr());
+  echo '<br><br>';
 
   $arr = array(
    'a' => "one",
@@ -54,7 +55,8 @@
    'g' => "three",
    'h' => "two"
   );
-  print_r(removeAllValuesMatching($arr, "two")) . '<br><br>';
+  print_r(removeAllValuesMatching($arr, "two"));
+  echo '<br><br>';
 
   $arr = array(
                    'a' => "one",
