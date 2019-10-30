@@ -30,7 +30,31 @@
     return $arr;
   }
 
+  function removeAllValuesMatching($arr, $elem) {
+    
+    foreach($arr as $el) {
+      if($el == $elem) {
+        unset($arr, $el);
+      }
+    }
+    return $arr;
+  }
+  
+  echo '2. ' ;
+  
   echo print_r(testArr()) . '<br><br>';
+
+  $arr = array(
+   'a' => "one",
+   'b' => "two",
+   'c' => "three",
+   'd' => "two",
+   'e' => "four",
+   'f' => "five",
+   'g' => "three",
+   'h' => "two"
+  );
+  print_r(removeAllValuesMatching($arr, "two")) . '<br><br>';
 
   $arr = array(
                    'a' => "one",
