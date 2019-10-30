@@ -2,8 +2,8 @@
   include('parts/header.php');
   include_once('parts/utils.php');
   include_once('parts/db.php');
-  
-  function removeDuplicates($arr) {
+
+function removeDuplicates($arr) {
       asort($arr);
       $prev_el = NULL;
       $prev_key = NULL;
