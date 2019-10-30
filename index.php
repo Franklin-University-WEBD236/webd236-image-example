@@ -39,6 +39,12 @@
     }
     return $arr;
   }
+
+  function findSpellings($word, $allWords) {
+    
+    
+    
+  }
   
   echo '2. ' ;
   
@@ -55,6 +61,7 @@
    'g' => "three",
    'h' => "two"
   );
+  echo '3. ';
   print_r(removeAllValuesMatching($arr, "two"));
   echo '<br><br>';
 
@@ -73,9 +80,8 @@
   print_r($arr);
   echo '<br><br>Duplicates removed:<br>';
   print_r(removeDuplicates($arr));
-
+  
+  echo '<br><br>5. ';
 ?>
-
-
   
 <?php include('parts/footer.php'); ?>
