@@ -30,7 +30,7 @@
     return $arr;
   }
 
-  echo '2. ' . print_r(testArr()) . '<br><br>';
+  echo print_r(testArr()) . '<br><br>';
 
   $arr = array(
                    'a' => "one",
@@ -43,10 +43,10 @@
                    'h' => "two"
                 );
                 
-                echo '4. Original array:<br>';
-                print_r($arr);
-                echo '<br><br>Duplicates removed:<br>';
-                print_r(removeDuplicates($arr));
+  echo '4. Original array:<br>';
+  print_r($arr);
+  echo '<br><br>Duplicates removed:<br>';
+  print_r(removeDuplicates($arr));
 
 ?>
 
