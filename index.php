@@ -41,9 +41,16 @@ function removeDuplicates($arr) {
   }
 
   function findSpellings($word, $allWords) {
-    
-    
-    
+    $retstr = '';
+    $found = FALSE;
+    foreach($allWords as $wrd) {
+      if($wrd == $word) {
+        $retstr = "Word $word found!";
+        $found = TRUE;
+        break;
+      }
+    }
+    return $retstr;
   }
     
   echo '2. ' ;
@@ -83,7 +90,7 @@ function removeDuplicates($arr) {
   
   echo '<br><br>5. ';
 
-  $dictonary = array(
+  $dictionary = array(
     'qualification',
     'qualify',
     'quality',
@@ -101,6 +108,10 @@ function removeDuplicates($arr) {
     'quotation',
     'quote',
     'quote');
+
+  $word = 'quiz';
+  echo '<br>';
+  echo findSpellings($word, $dictionary);
 ?>
   
 <?php include('parts/footer.php'); ?>
