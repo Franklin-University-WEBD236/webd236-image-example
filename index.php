@@ -22,14 +22,6 @@ function removeDuplicates($arr) {
       return $arr;
     }
 
-  function testArr() {
-    $arr = array();
-    $arr[4] = 'four';
-    $arr['three'] = 3;
-    $arr[] = 'What\'s my index?';
-    return $arr;
-  }
-
   function removeAllValuesMatching($arr, $elem) {
     
     foreach($arr as $key => $el) {
@@ -50,20 +42,17 @@ function removeDuplicates($arr) {
       $found = FALSE;
       foreach($allWords as $wrd) {
         if($sndX == soundex($wrd)) {
-          $retstr = "'$word' was misspelled. According soundex test it could be '$wrd'";
+          $retstr = "Word '$word' was misspelled. According soundex test it could be '$wrd'";
           $found = TRUE;
         }
       }
       if(!$found) {
-        $retstr = "'$word' was badly misspelled. Try again...";
+        $retstr = "Word '$word' was badly misspelled or is not in dictionary. Try again...";
       }
     }
     return $retstr;
   }
-    
-  echo '2. ' ;
-  
-  echo print_r(testArr());
+
   echo '<br><br>';
 
   $arr = array(
@@ -98,6 +87,7 @@ function removeDuplicates($arr) {
   
   echo '<br><br>5. ';
 
+//checking only words starting with letter 'q'
   $dictionary = array(
     'qualification',
     'qualify',
@@ -117,10 +107,20 @@ function removeDuplicates($arr) {
     'quote',
     'quote');
 
+//test with misspelled word
   $word = 'quiuz';
   echo '<br>';
   echo findSpellings($word, $dictionary);
-  echo '<br><br>'
+  echo '<br><br>';
+
+//test with a word not in dictionary
+  $word = 'about';
+  echo findSpellings($word, $dictionary);
+  echo '<br><br>';
+
+//test with a word in dictionary
+  $word = 'queen';
+  echo findSpellings($word, $dictionary);
 ?>
   
 <?php include('parts/footer.php'); ?>
