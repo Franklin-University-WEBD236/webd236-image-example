@@ -42,12 +42,20 @@ function removeDuplicates($arr) {
 
   function findSpellings($word, $allWords) {
     $retstr = '';
-    $found = FALSE;
-    foreach($allWords as $wrd) {
-      if($wrd == $word) {
-        $retstr = "Word $word found!";
-        $found = TRUE;
-        break;
+    if(array_search($word, $allWords)) {
+      $retstr = "Word '$word' found!";
+    }
+    else {
+      $sndX = soundex($word);
+      $found = FALSE;
+      foreach($allWords as $wrd) {
+        if($sndX == soundex($wrd)) {
+          $retstr = "'$word' was misspelled. According soundex test it could be '$wrd'";
+          $found = TRUE;
+        }
+      }
+      if(!$found) {
+        $retstr = "'$word' was badly misspelled. Try again...";
       }
     }
     return $retstr;
@@ -109,9 +117,10 @@ function removeDuplicates($arr) {
     'quote',
     'quote');
 
-  $word = 'quiz';
+  $word = 'quiuz';
   echo '<br>';
   echo findSpellings($word, $dictionary);
+  echo '<br><br>'
 ?>
   
 <?php include('parts/footer.php'); ?>
