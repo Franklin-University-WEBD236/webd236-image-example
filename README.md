@@ -1,6 +1,5 @@
-# WEBD 236 ToDo app, Model 1 architecture
+# WEBD 236 This is just for testing PHP code and solving homework examples
 
 Goals are:
-  - Demostrate a simple model 1 architecture
-  - Work with SQLite
-  - Lay the groundwork for model 2 architectures
+  - Test PHP code
+  - Solve homework examples

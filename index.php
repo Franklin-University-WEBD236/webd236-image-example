@@ -45,7 +45,7 @@ function removeDuplicates($arr) {
     
     
   }
-  
+    
   echo '2. ' ;
   
   echo print_r(testArr());
@@ -82,6 +82,25 @@ function removeDuplicates($arr) {
   print_r(removeDuplicates($arr));
   
   echo '<br><br>5. ';
+
+  $dictonary = array(
+    'qualification',
+    'qualify',
+    'quality',
+    'quantity',
+    'quarter',
+    'quarterback',
+    'quarterly',
+    'queen',
+    'question',
+    'quick',
+    'quiet', 
+    'quit',
+    'quite',
+    'quiz',
+    'quotation',
+    'quote',
+    'quote');
 ?>
   
 <?php include('parts/footer.php'); ?>
