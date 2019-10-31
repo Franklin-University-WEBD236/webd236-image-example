@@ -44,6 +44,7 @@ function removeDuplicates($arr) {
         if($sndX == soundex($wrd)) {
           $retstr = "Word '$word' was misspelled. According soundex test it could be '$wrd'";
           $found = TRUE;
+          break;
         }
       }
       if(!$found) {
