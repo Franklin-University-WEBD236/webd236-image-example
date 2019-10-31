@@ -65,8 +65,14 @@ function removeDuplicates($arr) {
    'g' => "three",
    'h' => "two"
   );
-  echo '3. ';
-  print_r(removeAllValuesMatching($arr, "two"));
+  
+  $val = "two";
+  echo "3.";
+  echo '<br>';
+  echo 'Original array:<br>';
+  print_r($arr);
+  echo '<br><br>Value "'. $val . '" removed:<br>';
+  print_r(removeAllValuesMatching($arr, $val));
   echo '<br><br>';
 
   $arr = array(
