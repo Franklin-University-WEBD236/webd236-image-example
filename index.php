@@ -3,18 +3,20 @@
   include_once('parts/utils.php');
   include_once('parts/db.php');
 
-function myMax($current, $new) {
-    return $current < $new ? $new : $current;
-}
+// Our closure
+$double = function($a) {
+    return $a * 2;
+};
 
-$arr = array(10, 5, 3, 5, 1, 2, 5, 7, 4);
+// This is our range of numbers
+$numbers = range(1, 5);
 
-function reduce($arr, 'myMax') {
-  
-}
+// Use the closure as a callback here to
+// double the size of each element in our
+// range
+$new_numbers = array_map($double, $numbers);
 
-
-print("Max: " . reduce($arr, 'myMax') . "<br />");
+print implode(' ', $new_numbers);
 
 
 include('parts/footer.php'); ?>
