@@ -1,5 +1,5 @@
-# WEBD 236 This is just for testing PHP code and solving homework examples
+# Homework 6 PHP code
 
 Goals are:
   - Test PHP code
-  - Solve homework examples
+  - Provide code to HW 6
