@@ -10,11 +10,13 @@ function myMax($current, $new) {
 $arr = array(10, 5, 3, 5, 1, 2, 5, 7, 4);
 
 function reduce($arr, $func) {
-  //over my head
+  
+  //spent two nights over this; throwing the towell in the ring
+  
+  return ' - 2 and 3 over my head<br><br>';
 }
 
 print("Max: " . reduce($arr, 'myMax') . "<br />");
-
 
 class Car {
   private $fuel;
