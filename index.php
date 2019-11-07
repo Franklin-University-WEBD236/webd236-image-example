@@ -19,16 +19,46 @@ function reduce($arr, $func) {
 print("Max: " . reduce($arr, 'myMax') . "<br />");
 
 class Car {
-  private $fuel;
-  private $miles;
+  private $totalFuel;
+  private $totalMiles;
   private $milage;
   
   public function __construct($initialGas, $mpg) {
-    $fuel = $inigialGas;
+    $totalFuel = $initialGas;
     $milage = $mpg;
-    $miles = 0;
+    $totalMiles = 0;
   }
+  
+  public function drive($miles) {
+    $this->totalMiles += $miles;
+    
+  }
+  
+  public function addGas($gallons) {
+    $this->totalFuel += $gallons;
+  }
+  
+  public function readFuelGauge() {
+    return $this->totalFuel;
+  }
+  
+  public function readOdometer() {
+    return $this->totalMiles;
+  }
+  
+  public function __toString() {
+        return 'Car (gas: ' . $this->readFuelGauge() .
+            ', miles: ' . $this->readOdometer() . ')';
+    }
 }
 
+$car = new Car(20, 25);
+$car -> drive(25);
+print($car . '<br />');
+$car -> drive(1000);
+print($car . '<br />');
+$car -> addGas(5);
+$car -> drive(10);
+print($car . '<br />');
 
 include('parts/footer.php'); ?>
