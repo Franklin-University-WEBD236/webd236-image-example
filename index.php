@@ -10,15 +10,13 @@ function myMax($current, $new) {
 $arr = array(10, 5, 3, 5, 1, 2, 5, 7, 4);
 
 function reduce($arr, $func) {
-  $curr = 0;
-  while(count($arr) > 0) {
-    $max = array_pop();
-  }
+  //too much for me
 }
 
-echo '# 2 and 3 over my head. Spent two nights on these and I am throwing my towel in the ring';
+echo '# 2 and 3 over my head. 
+Spent two nights on these and I am throwing my towel in the ring<br>';
 
-print("Max: " . reduce($arr, 'myMax') . "<br />");
+print("Max: " . reduce($arr, 'myMax') . "<br><br>");
 
 class Car {
   private $totalFuel;
@@ -61,6 +59,7 @@ class Car {
     }
 }
 
+echo '4. Class example:<br>';
 $car = new Car(20, 25);
 $car -> drive(25);
 print($car . '<br />');
