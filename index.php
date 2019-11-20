@@ -1,8 +1,7 @@
-
-
-<img src="image.php?path=dog" style="border: 3px solid black;" />
+<?php
   
-<br/>
-<br/>
-  
-<img src="image.php?path=kitten" style="border: 3px solid black;" />
+
+$d = dir("/tmp/private/");
+while(false !== ($entry = $d->read())){
+  echo "<p>" . $entry . "</p>";
+}
