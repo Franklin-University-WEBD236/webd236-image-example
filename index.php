@@ -5,4 +5,4 @@
 <br/>
 <br/>
   
-<img src="data:" />
+<img src="image.php?path=kitten" style="border: 3px solid black;" />
